@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Login from './components/Login';
 import CrearPedido from './components/CrearPedido';
+import ListaPedidos from './components/ListaPedidos';
 
 const App = () => {
   const [token, setToken] = useState(null);
@@ -11,7 +12,7 @@ const App = () => {
       {!token ? (
         <Login onLogin={setToken} />
       ) : (
-        <CrearPedido token={token} />
+        <><CrearPedido token={token} /><ListaPedidos token={token} /></>
       )}
     </div>
   );
